@@ -250,7 +250,7 @@ The following prerequisites must be installed before using the explorer:
 Open the MongoDB cli:
 
 ```
-mongo
+mongosh
 ```
 
 Select database:
@@ -264,13 +264,13 @@ use explorerdb
 Create a new user with read/write access:
 
 ```
-db.createUser( { user: "eiquidus", pwd: "Nd^p2d77ceBX!L", roles: [ "readWrite" ] } )
+db.createUser( { user: "eiquidus", pwd: "StrongerPassword", roles: [ "readWrite" ] } )
 ```
 
 ##### Download Source Code
 
 ```
-git clone https://github.com/team-exor/eiquidus explorer
+git clone https://github.com/JericoinProject/eiquidus explorer
 ```
 
 ##### Install Node Modules
