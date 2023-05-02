@@ -221,7 +221,7 @@ Table of Contents
 
 ### See it in Action
 
--  https://explorer.exor.io/
+-  https://explorer.jericoin.com/
 
 ### Installation
 
@@ -240,8 +240,8 @@ While we do not yet have our own step-by-step setup instructions, there are a fe
 
 The following prerequisites must be installed before using the explorer:
 
-- [Node.js](https://nodejs.org/en/) (v14.15.4 or newer recommended)
-- [MongoDB](https://www.mongodb.com/) (v4.4.3 or newer recommended)
+- [Node.js](https://github.com/JericoinProject/utils/install_node.sh) (v14.15.4 or newer recommended)
+- [MongoDB](https://github.com/JericoinProject/utils/install_mongodb.sh) (v4.4.3 or newer recommended)
 - [Git](https://git-scm.com/downloads) (v2.36.0 or newer recommended)
 - A fully synchronized *coind* wallet daemon that supports the [Bitcoin RPC API protocol](https://developer.bitcoin.org/reference/rpc/index.html). **NOTE:** In most cases, the blockchain must be synced with the `txindex` feature enabled to have access to all transactions. See the [Wallet Settings](#wallet-settings) section for more details.
 
@@ -264,7 +264,13 @@ use explorerdb
 Create a new user with read/write access:
 
 ```
-db.createUser( { user: "eiquidus", pwd: "StrongerPassword", roles: [ "readWrite" ] } )
+db.createUser(
+   {
+     user: "accountUser",
+     pwd: passwordPrompt(),  // Or  "<cleartext password>"
+     roles: [ "readWrite", "dbAdmin" ]
+   }
+)
 ```
 
 ##### Download Source Code
